@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAH Engineers - Our Services</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Minimalist Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="scripts/style.css">
+    
+    <!-- Tailwind Config - Light & Green Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0a0a0a',      // Deep Black
+                        accent: '#059669',       // Emerald Green
+                        light: '#f8fafc',        // Light Background
+                        gray: {
+                            mid: '#64748b',
+                            light: '#e2e8f0',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Playfair Display', 'serif'],
+                        body: ['DM Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-body bg-light text-primary antialiased overflow-x-hidden">
+    
+    <!-- Full Screen Navigation Menu -->
+    <nav id="fullscreenMenu" class="fullscreen-menu">
+        <div class="menu-overlay">
+            <!-- Close Button -->
+            <button id="menuClose" class="menu-close" aria-label="Close Menu">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- Menu Content -->
+            <div class="menu-content">
+                <!-- Logo in Menu -->
+                <div class="menu-logo">
+                    <div class="flex items-center gap-3">
+                        <div class="flex gap-2">
+                            <div class="w-3 h-3 bg-accent rounded-full"></div>
+                            <div class="w-3 h-3 bg-white rounded-full"></div>
+                            <div class="w-3 h-3 bg-accent rounded-full"></div>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-2xl font-black text-white tracking-tight uppercase">AAH Engineers</h3>
+                            <p class="text-xs text-accent font-bold tracking-widest uppercase">Est. 1996</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <ul class="menu-links">
+                    <li class="menu-item">
+                        <a href="index.html" class="menu-link">
+                            <span class="menu-number">01</span>
+                            <span class="menu-text">Home</span>
+                            <i class="fas fa-arrow-right menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="aboutus.html" class="menu-link">
+                            <span class="menu-number">02</span>
+                            <span class="menu-text">About Us</span>
+                            <i class="fas fa-arrow-right menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="products.html" class="menu-link">
+                            <span class="menu-number">03</span>
+                            <span class="menu-text">Products</span>
+                            <i class="fas fa-arrow-right menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="services.html" class="menu-link">
+                            <span class="menu-number">04</span>
+                            <span class="menu-text">Services</span>
+                            <i class="fas fa-arrow-right menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="gallery.html" class="menu-link">
+                            <span class="menu-number">05</span>
+                            <span class="menu-text">Gallery</span>
+                            <i class="fas fa-arrow-right menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="contact.html" class="menu-link">
+                            <span class="menu-number">06</span>
+                            <span class="menu-text">Contact</span>
+                            <i class="fas fa-arrow-right menu-icon"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Contact Info -->
+                <div class="menu-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt text-accent"></i>
+                        <a href="tel:+912227690140" class="hover:text-accent transition">+91 22 27690140</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-mobile-alt text-accent"></i>
+                        <a href="tel:+919967522338" class="hover:text-accent transition">+91 9967522338</a>
+                        <span class="mx-1">/</span>
+                        <a href="tel:+919867974449" class="hover:text-accent transition">9867974449</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope text-accent"></i>
+                        <a href="mailto:info@aahengineers.com" class="hover:text-accent transition">info@aahengineers.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div>
+        <div>
+            
+            <!-- Modern Logo - Top Left - Fixed on Scroll -->
+            <div class="fixed top-6 left-6 z-50" data-aos="fade-down" data-aos-duration="600">
+                <a href="index.html" class="flex items-center gap-3 px-5 py-3 bg-white/95 backdrop-blur-md shadow-2xl border-l-4 border-accent">
+                    <div class="flex items-center gap-2">
+                        <div class="w-2 h-2 bg-accent rounded-full"></div>
+                        <div class="w-2 h-2 bg-primary rounded-full"></div>
+                        <div class="w-2 h-2 bg-accent rounded-full"></div>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-lg font-black text-primary tracking-tight uppercase">AAH Engineers</h3>
+                        <p class="text-[10px] text-accent font-bold tracking-[0.3em] uppercase">Est. 1996</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Menu Button - Top Right - Fixed on Scroll -->
+            <button id="menuToggle" class="fixed top-6 right-6 z-50 p-4 bg-white/95 backdrop-blur-md shadow-2xl border-2 border-gray-light hover:border-accent transition-all duration-150 group" data-aos="fade-down" data-aos-duration="600" aria-label="Toggle Menu">
+                <div class="w-6 h-5 flex flex-col justify-between">
+                    <span class="w-full h-0.5 bg-primary group-hover:bg-accent transition-all duration-150 origin-left"></span>
+                    <span class="w-full h-0.5 bg-primary group-hover:bg-accent transition-all duration-150"></span>
+                    <span class="w-full h-0.5 bg-primary group-hover:bg-accent transition-all duration-150 origin-left"></span>
+                </div>
+            </button>
+
+            <!-- Hero Section -->
+            <section class="relative h-[70vh] flex items-center justify-center text-center bg-gradient-to-br from-light to-white overflow-hidden">
+                <div class="absolute inset-0 z-0">
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/90 via-light/80 to-white/70"></div>
+                </div>
+
+                <!-- Decorative Elements -->
+                <div class="absolute top-20 right-10 w-2 h-32 bg-accent/20"></div>
+                <div class="absolute bottom-20 left-10 w-32 h-2 bg-accent/20"></div>
+
+                <div class="relative z-10 container mx-auto px-6 lg:px-12">
+                    <div class="inline-flex items-center gap-3 px-6 py-2 bg-accent/10 border-l-4 border-accent mb-6" data-aos="fade-down">
+                        <i class="fas fa-tools text-accent"></i>
+                        <span class="text-sm font-bold text-accent tracking-wider uppercase">Comprehensive Solutions</span>
+                    </div>
+                    <h1 class="font-display text-6xl md:text-7xl lg:text-8xl font-bold text-primary mb-6" data-aos="fade-up">Our Services</h1>
+                    <p class="text-lg md:text-xl text-gray-mid max-w-3xl mx-auto mb-4" data-aos="fade-up" data-aos-delay="100">
+                        Specialized gearbox solutions for the rubber and tire industry
+                    </p>
+                    <p class="text-base text-gray-mid max-w-2xl mx-auto italic" data-aos="fade-up" data-aos-delay="200">
+                        "Innovation distinguishes between a leader and a follower." — Steve Jobs
+                    </p>
+                </div>
+            </section>
+
+            <!-- Services Overview -->
+            <section class="py-20 lg:py-32 bg-white relative overflow-hidden">
+                <div class="container mx-auto px-6 lg:px-12">
+                    
+                    <!-- Section Header -->
+                    <div class="text-center mb-20" data-aos="fade-up">
+                        <div class="inline-flex items-center gap-3 px-6 py-2 bg-primary text-white mb-6">
+                            <i class="fas fa-cogs text-accent"></i>
+                            <span class="text-sm font-bold tracking-wider uppercase">What We Offer</span>
+                        </div>
+                        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4">
+                            Specialized Gearbox Solutions
+                        </h2>
+                        <p class="text-lg text-gray-mid max-w-3xl mx-auto">
+                            Custom-engineered systems designed for maximum performance and reliability
+                        </p>
+                    </div>
+
+                    <!-- Service 1: Banbury Mixer Gearbox -->
+                    <div class="mb-24" data-aos="fade-up">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <!-- Content -->
+                            <div>
+                                <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/30 mb-4">
+                                    <span class="w-2 h-2 bg-accent rounded-full"></span>
+                                    <span class="text-sm font-semibold text-accent uppercase tracking-wider">Tire Industry</span>
+                                </div>
+                                <h3 class="font-display text-4xl md:text-5xl font-bold text-primary mb-6">
+                                    1500 KW Banbury Mixer Gearbox
+                                </h3>
+                                <p class="text-lg text-gray-mid leading-relaxed mb-6">
+                                    Banbury mixer is mainly used for plasticating, mixing and final mixing the stock. The diversity of rotor type can meet different mixing requirements.
+                                </p>
+                                
+                                <!-- Key Features -->
+                                <div class="space-y-4 mb-8">
+                                    <div class="flex items-start gap-4">
+                                        <div class="w-10 h-10 bg-accent/10 flex items-center justify-center flex-shrink-0 mt-1">
+                                            <i class="fas fa-check text-accent"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-primary mb-1">Versatile Rotor Options</h4>
+                                            <p class="text-gray-mid">User can choose any kind of rotors - the mixer with different rotor has different total volume and working volume</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start gap-4">
+                                        <div class="w-10 h-10 bg-accent/10 flex items-center justify-center flex-shrink-0 mt-1">
+                                            <i class="fas fa-check text-accent"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-primary mb-1">Advanced Drive System</h4>
+                                            <p class="text-gray-mid">Adopts DC motor or AC inverter motor to realize stepless speed adjustment or AC motor with gearbox, ensuring steady drive, lower noise and long service life</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start gap-4">
+                                        <div class="w-10 h-10 bg-accent/10 flex items-center justify-center flex-shrink-0 mt-1">
+                                            <i class="fas fa-check text-accent"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-primary mb-1">Flexible Configuration</h4>
+                                            <p class="text-gray-mid">Standard rotor adopts the right drive system. According to users' needs we also can supply the left drive system</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start gap-4">
+                                        <div class="w-10 h-10 bg-accent/10 flex items-center justify-center flex-shrink-0 mt-1">
+                                            <i class="fas fa-check text-accent"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-primary mb-1">Smart Control System</h4>
+                                            <p class="text-gray-mid">On-site operation cabinets and electrical control cabinets adopt PLC communication, resulting in reduction of equipment troubles and installation cost</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <a href="contact.html" class="group inline-flex items-center gap-3 px-8 py-4 border-2 border-primary bg-transparent text-primary font-bold tracking-wide overflow-hidden transition-all duration-500 hover:border-accent hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/20">
+                                    <span class="relative z-10 transition-colors duration-300 group-hover:text-white">Request Quote</span>
+                                    <i class="fas fa-arrow-right text-sm transition-transform duration-300 group-hover:translate-x-2 relative z-10 group-hover:text-white"></i>
+                                    <div class="absolute inset-0 bg-accent scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"></div>
+                                </a>
+                            </div>
+
+                            <!-- Image/Visual -->
+                            <div class="relative" data-aos="fade-left">
+                                <div class="bg-gradient-to-br from-accent/20 to-primary/10 p-12 border-2 border-gray-light">
+                                    <div class="bg-white p-8 shadow-2xl">
+                                        <div class="text-center mb-6">
+                                            <div class="w-24 h-24 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                <i class="fas fa-industry text-accent text-5xl"></i>
+                                            </div>
+                                            <h4 class="font-display text-2xl font-bold text-primary">1500 KW Capacity</h4>
+                                        </div>
+                                        <div class="space-y-3 text-sm">
+                                            <div class="flex justify-between py-2 border-b border-gray-light">
+                                                <span class="text-gray-mid">Power Rating:</span>
+                                                <span class="font-semibold text-primary">1500 KW</span>
+                                            </div>
+                                            <div class="flex justify-between py-2 border-b border-gray-light">
+                                                <span class="text-gray-mid">Application:</span>
+                                                <span class="font-semibold text-primary">Tire Industry</span>
+                                            </div>
+                                            <div class="flex justify-between py-2 border-b border-gray-light">
+                                                <span class="text-gray-mid">Motor Type:</span>
+                                                <span class="font-semibold text-primary">DC / AC Inverter</span>
+                                            </div>
+                                            <div class="flex justify-between py-2">
+                                                <span class="text-gray-mid">Control:</span>
+                                                <span class="font-semibold text-primary">PLC Based</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: Bull Gear & Pinion -->
+                    <div class="mb-24" data-aos="fade-up">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            
+                            <!-- Image/Visual - Left Side -->
+                            <div class="relative order-2 lg:order-1" data-aos="fade-right">
+                                <div class="bg-gradient-to-br from-primary/10 to-accent/20 p-12 border-2 border-gray-light">
+                                    <div class="bg-white p-8 shadow-2xl">
+                                        <div class="text-center mb-6">
+                                            <div class="w-24 h-24 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                <i class="fas fa-cog text-accent text-5xl"></i>
+                                            </div>
+                                            <h4 class="font-display text-2xl font-bold text-primary">Premium Quality</h4>
+                                        </div>
+                                        <div class="space-y-4">
+                                            <div class="bg-accent/5 p-4 border-l-4 border-accent">
+                                                <p class="text-sm font-semibold text-primary mb-1">API Standard Equivalent</p>
+                                                <p class="text-xs text-gray-mid">Meets international quality standards</p>
+                                            </div>
+                                            <div class="bg-accent/5 p-4 border-l-4 border-accent">
+                                                <p class="text-sm font-semibold text-primary mb-1">Forged Alloy Steel</p>
+                                                <p class="text-xs text-gray-mid">Superior strength and durability</p>
+                                            </div>
+                                            <div class="bg-accent/5 p-4 border-l-4 border-accent">
+                                                <p class="text-sm font-semibold text-primary mb-1">Custom Specifications</p>
+                                                <p class="text-xs text-gray-mid">Available for many different requirements</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Content - Right Side -->
+                            <div class="order-1 lg:order-2">
+                                <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/30 mb-4">
+                                    <span class="w-2 h-2 bg-accent rounded-full"></span>
+                                    <span class="text-sm font-semibold text-accent uppercase tracking-wider">Rubber Industry</span>
+                                </div>
+                                <h3 class="font-display text-4xl md:text-5xl font-bold text-primary mb-6">
+                                    Bull Gear & Pinion
+                                </h3>
+                                <p class="text-lg text-gray-mid leading-relaxed mb-6">
+                                    High-precision bull gears and pinions engineered specifically for the rubber industry, built to API standards with superior materials and craftsmanship.
+                                </p>
+                                
+                                <!-- Characteristics -->
+                                <div class="bg-light p-8 mb-8 border-l-4 border-accent">
+                                    <h4 class="font-display text-xl font-bold text-primary mb-4">Key Characteristics</h4>
+                                    <ul class="space-y-3">
+                                        <li class="flex items-start gap-3">
+                                            <i class="fas fa-circle text-accent text-xs mt-2"></i>
+                                            <span class="text-gray-mid">Equivalent to API Standard for international quality compliance</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <i class="fas fa-circle text-accent text-xs mt-2"></i>
+                                            <span class="text-gray-mid">Manufactured from forged alloy steel for maximum strength and longevity</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <i class="fas fa-circle text-accent text-xs mt-2"></i>
+                                            <span class="text-gray-mid">Right drive system as standard, with left drive system available upon request</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <i class="fas fa-circle text-accent text-xs mt-2"></i>
+                                            <span class="text-gray-mid">Available for many different specifications as required by your application</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <a href="contact.html" class="group inline-flex items-center gap-3 px-8 py-4 border-2 border-primary bg-transparent text-primary font-bold tracking-wide overflow-hidden transition-all duration-500 hover:border-accent hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/20">
+                                    <span class="relative z-10 transition-colors duration-300 group-hover:text-white">Get Specifications</span>
+                                    <i class="fas fa-arrow-right text-sm transition-transform duration-300 group-hover:translate-x-2 relative z-10 group-hover:text-white"></i>
+                                    <div class="absolute inset-0 bg-accent scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"></div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Service 3: Calendar Drive Gearbox -->
+                    <div class="mb-12" data-aos="fade-up">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            
+                            <!-- Content -->
+                            <div>
+                                <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/30 mb-4">
+                                    <span class="w-2 h-2 bg-accent rounded-full"></span>
+                                    <span class="text-sm font-semibold text-accent uppercase tracking-wider">Rubber Forming</span>
+                                </div>
+                                <h3 class="font-display text-4xl md:text-5xl font-bold text-primary mb-6">
+                                    Calendar Drive Gearbox
+                                </h3>
+                                <p class="text-lg text-gray-mid leading-relaxed mb-8">
+                                    A comprehensive range of calendar drives used for rubber forming, custom-engineered to match our customers' exact specifications.
+                                </p>
+                                
+                                <!-- Features Grid -->
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                                    <div class="bg-white p-6 border-2 border-gray-light hover:border-accent transition-all duration-300 hover:shadow-xl">
+                                        <div class="w-12 h-12 bg-accent/10 flex items-center justify-center mb-4">
+                                            <i class="fas fa-drafting-compass text-accent text-2xl"></i>
+                                        </div>
+                                        <h5 class="font-semibold text-primary mb-2">Custom Engineering</h5>
+                                        <p class="text-sm text-gray-mid">Designed to match your exact specifications and requirements</p>
+                                    </div>
+                                    
+                                    <div class="bg-white p-6 border-2 border-gray-light hover:border-accent transition-all duration-300 hover:shadow-xl">
+                                        <div class="w-12 h-12 bg-accent/10 flex items-center justify-center mb-4">
+                                            <i class="fas fa-layer-group text-accent text-2xl"></i>
+                                        </div>
+                                        <h5 class="font-semibold text-primary mb-2">Multiple Outputs</h5>
+                                        <p class="text-sm text-gray-mid">Can be manufactured with multiple output shafts</p>
+                                    </div>
+                                    
+                                    <div class="bg-white p-6 border-2 border-gray-light hover:border-accent transition-all duration-300 hover:shadow-xl">
+                                        <div class="w-12 h-12 bg-accent/10 flex items-center justify-center mb-4">
+                                            <i class="fas fa-ruler-combined text-accent text-2xl"></i>
+                                        </div>
+                                        <h5 class="font-semibold text-primary mb-2">Precision Forming</h5>
+                                        <p class="text-sm text-gray-mid">Optimized for rubber forming applications</p>
+                                    </div>
+                                    
+                                    <div class="bg-white p-6 border-2 border-gray-light hover:border-accent transition-all duration-300 hover:shadow-xl">
+                                        <div class="w-12 h-12 bg-accent/10 flex items-center justify-center mb-4">
+                                            <i class="fas fa-tools text-accent text-2xl"></i>
+                                        </div>
+                                        <h5 class="font-semibold text-primary mb-2">Flexible Design</h5>
+                                        <p class="text-sm text-gray-mid">Adaptable to various production needs</p>
+                                    </div>
+                                </div>
+
+                                <a href="contact.html" class="group inline-flex items-center gap-3 px-8 py-4 border-2 border-primary bg-transparent text-primary font-bold tracking-wide overflow-hidden transition-all duration-500 hover:border-accent hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/20">
+                                    <span class="relative z-10 transition-colors duration-300 group-hover:text-white">Discuss Your Project</span>
+                                    <i class="fas fa-arrow-right text-sm transition-transform duration-300 group-hover:translate-x-2 relative z-10 group-hover:text-white"></i>
+                                    <div class="absolute inset-0 bg-accent scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"></div>
+                                </a>
+                            </div>
+
+                            <!-- Image/Visual -->
+                            <div class="relative" data-aos="fade-left">
+                                <div class="bg-gradient-to-br from-accent/20 to-primary/10 p-12 border-2 border-gray-light">
+                                    <div class="bg-white p-8 shadow-2xl">
+                                        <div class="text-center mb-6">
+                                            <div class="w-24 h-24 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                <i class="fas fa-cogs text-accent text-5xl"></i>
+                                            </div>
+                                            <h4 class="font-display text-2xl font-bold text-primary">Calendar Drive</h4>
+                                            <p class="text-sm text-gray-mid mt-2">For Rubber Forming</p>
+                                        </div>
+                                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                            <div class="text-center p-5 bg-accent/5 border border-accent/20 h-full flex flex-col items-center justify-center transition-all duration-300 hover:border-accent/60 hover:-translate-y-1">
+                                                <i class="fas fa-check-circle text-accent text-2xl mb-2"></i>
+                                                <p class="text-sm font-semibold text-primary">Custom Engineered</p>
+                                            </div>
+                                            <div class="text-center p-5 bg-accent/5 border border-accent/20 h-full flex flex-col items-center justify-center transition-all duration-300 hover:border-accent/60 hover:-translate-y-1">
+                                                <i class="fas fa-check-circle text-accent text-2xl mb-2"></i>
+                                                <p class="text-sm font-semibold text-primary">Multiple Output Shafts</p>
+                                            </div>
+                                            <div class="text-center p-5 bg-accent/5 border border-accent/20 h-full flex flex-col items-center justify-center transition-all duration-300 hover:border-accent/60 hover:-translate-y-1">
+                                                <i class="fas fa-check-circle text-accent text-2xl mb-2"></i>
+                                                <p class="text-sm font-semibold text-primary">Exact Specifications</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Additional Services Section -->
+            <section class="py-20 bg-gradient-to-br from-light via-white to-light relative overflow-hidden">
+                <div class="container mx-auto px-6 lg:px-12">
+                    
+                    <div class="text-center mb-16" data-aos="fade-up">
+                        <h2 class="font-display text-4xl md:text-5xl font-bold text-primary mb-4">
+                            Comprehensive Support Services
+                        </h2>
+                        <p class="text-lg text-gray-mid max-w-3xl mx-auto">
+                            Beyond manufacturing, we provide end-to-end support for all your gearbox needs
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <!-- Support Service 1 -->
+                        <div class="bg-white p-8 border-2 border-gray-light hover:border-accent transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl group" data-aos="fade-up" data-aos-delay="100">
+                            <div class="w-16 h-16 bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors duration-300">
+                                <i class="fas fa-wrench text-accent text-3xl"></i>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-primary mb-4">Repairs & Reconditioning</h3>
+                            <p class="text-gray-mid leading-relaxed">
+                                Expert repair and reconditioning services for gearboxes of any make and model, restoring optimal performance.
+                            </p>
+                        </div>
+
+                        <!-- Support Service 2 -->
+                        <div class="bg-white p-8 border-2 border-gray-light hover:border-accent transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl group" data-aos="fade-up" data-aos-delay="200">
+                            <div class="w-16 h-16 bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors duration-300">
+                                <i class="fas fa-clipboard-check text-accent text-3xl"></i>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-primary mb-4">Preventive Maintenance</h3>
+                            <p class="text-gray-mid leading-relaxed">
+                                On-site inspection and preventive maintenance services to minimize plant downtime and extend equipment life.
+                            </p>
+                        </div>
+
+                        <!-- Support Service 3 -->
+                        <div class="bg-white p-8 border-2 border-gray-light hover:border-accent transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl group" data-aos="fade-up" data-aos-delay="300">
+                            <div class="w-16 h-16 bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors duration-300">
+                                <i class="fas fa-lightbulb text-accent text-3xl"></i>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-primary mb-4">Re-engineering Solutions</h3>
+                            <p class="text-gray-mid leading-relaxed">
+                                Innovative re-engineering of existing gearboxes to improve performance, efficiency, and reliability.
+                            </p>
+                        </div>
+
+                        <!-- Support Service 4 -->
+                        <div class="bg-white p-8 border-2 border-gray-light hover:border-accent transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl group" data-aos="fade-up" data-aos-delay="100">
+                            <div class="w-16 h-16 bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors duration-300">
+                                <i class="fas fa-box text-accent text-3xl"></i>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-primary mb-4">Spare Parts Manufacturing</h3>
+                            <p class="text-gray-mid leading-relaxed">
+                                Quick turnaround on manufacturing spares for a variety of requirements, ensuring minimal downtime.
+                            </p>
+                        </div>
+
+                        <!-- Support Service 5 -->
+                        <div class="bg-white p-8 border-2 border-gray-light hover:border-accent transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl group" data-aos="fade-up" data-aos-delay="200">
+                            <div class="w-16 h-16 bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors duration-300">
+                                <i class="fas fa-compass-drafting text-accent text-3xl"></i>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-primary mb-4">Design & Development</h3>
+                            <p class="text-gray-mid leading-relaxed">
+                                Custom design and development services for specific needs and unique industrial applications.
+                            </p>
+                        </div>
+
+                        <!-- Support Service 6 -->
+                        <div class="bg-white p-8 border-2 border-gray-light hover:border-accent transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl group" data-aos="fade-up" data-aos-delay="300">
+                            <div class="w-16 h-16 bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors duration-300">
+                                <i class="fas fa-headset text-accent text-3xl"></i>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-primary mb-4">Technical Consultation</h3>
+                            <p class="text-gray-mid leading-relaxed">
+                                Expert technical consultation to help you choose the right solution for your specific requirements.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="py-20 lg:py-32 bg-primary text-white relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary to-accent/40 opacity-80"></div>
+                <div class="absolute -top-40 -right-24 w-80 h-80 rounded-full bg-white/10 blur-3xl"></div>
+                <div class="absolute -bottom-48 -left-28 w-96 h-96 rounded-full bg-accent/20 blur-3xl"></div>
+
+                <div class="relative z-10 container mx-auto px-6 lg:px-12 text-center">
+                    <div class="max-w-4xl mx-auto" data-aos="fade-up">
+                        <i class="fas fa-quote-left text-4xl text-accent mb-6"></i>
+                        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                            Ready to Discuss Your Project?
+                        </h2>
+                        <p class="text-xl text-white/80 mb-4 leading-relaxed">
+                            Our team of experts is ready to help you find the perfect gearbox solution for your industrial needs.
+                        </p>
+                        <p class="text-lg text-white/60 italic mb-12">
+                            "The best way to predict the future is to create it." — Peter Drucker
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                            <a href="contact.html" class="group relative px-12 py-5 bg-accent text-white font-bold tracking-wide overflow-hidden transition-all duration-500 hover:bg-white hover:text-primary hover:-translate-y-1 hover:shadow-2xl">
+                                <span class="relative z-10 flex items-center justify-center gap-3">
+                                    Contact Us Today
+                                    <i class="fas fa-arrow-right text-sm transition-transform duration-300 group-hover:translate-x-2"></i>
+                                </span>
+                            </a>
+                            
+                            <a href="https://wa.me/919967522338?text=Hello%20AAH%20Engineers!%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" class="group relative px-12 py-5 border-2 border-white bg-transparent text-white font-bold tracking-wide overflow-hidden transition-all duration-500 hover:bg-white hover:text-primary hover:-translate-y-1 hover:shadow-2xl">
+                                <span class="relative z-10 flex items-center justify-center gap-3">
+                                    <i class="fab fa-whatsapp text-xl"></i>
+                                    Chat on WhatsApp
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="bg-primary text-white pt-20 pb-10 relative overflow-hidden">
+                <!-- Ambient glow -->
+                <div class="absolute inset-0 bg-gradient-to-tr from-accent/10 via-transparent to-white/5 pointer-events-none"></div>
+                <div class="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-accent/20 blur-3xl opacity-70"></div>
+                <div class="absolute -top-16 right-0 w-64 h-64 rounded-full bg-white/10 blur-3xl opacity-50"></div>
+
+                <div class="relative z-10 container mx-auto px-6 lg:px-12">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-white/10 pb-10">
+                        <div>
+                            <h3 class="font-display text-2xl font-semibold mb-4">AAH Engineers</h3>
+                            <p class="text-white/60 leading-relaxed">
+                                Precision gearbox solutions engineered for heavy-duty performance, backed by decades of manufacturing excellence and innovation.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-sm uppercase tracking-[0.35em] text-white/60 mb-4">Quick Links</h4>
+                            <ul class="space-y-3 text-white/70">
+                                <li><a href="aboutus.html" class="hover:text-accent transition">About Us</a></li>
+                                <li><a href="products.html" class="hover:text-accent transition">Products</a></li>
+                                <li><a href="services.html" class="hover:text-accent transition">Services</a></li>
+                                <li><a href="contact.html" class="hover:text-accent transition">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-sm uppercase tracking-[0.35em] text-white/60 mb-4">Contact Us</h4>
+                            <div class="space-y-3 text-white/70 text-sm">
+                                <p class="flex items-start gap-3">
+                                    <i class="fas fa-map-marker-alt text-accent mt-1"></i>
+                                    <span>Plot No R544, TTC Industrial Area, Near Golden Garage, Rabale, Navi Mumbai 400701</span>
+                                </p>
+                                <p class="flex items-center gap-3">
+                                    <i class="fas fa-phone-alt text-accent"></i>
+                                    <a href="tel:+912227690140" class="hover:text-accent transition">+91 22 27690140</a>
+                                </p>
+                                <p class="flex items-center gap-3">
+                                    <i class="fas fa-mobile-alt text-accent"></i>
+                                    <a href="tel:+919967522338" class="hover:text-accent transition">+91 9967522338</a>
+                                    <span class="mx-1">/</span>
+                                    <a href="tel:+919867974449" class="hover:text-accent transition">9867974449</a>
+                                </p>
+                                <p class="flex items-center gap-3">
+                                    <i class="fas fa-envelope text-accent"></i>
+                                    <a href="mailto:info@aahengineers.com" class="hover:text-accent transition">info@aahengineers.com</a>
+                                </p>
+                            </div>
+                            <div class="flex gap-4 mt-6">
+                                <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-accent hover:text-accent transition">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-accent hover:text-accent transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-accent hover:text-accent transition">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative z-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-white/60 text-sm tracking-wider">
+                        <p>© <span id="currentYear"></span> AAH Engineers. All rights reserved.</p>
+                        <p class="uppercase tracking-[0.4em] text-white/50">copyright made by abhay hanchate</p>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919967522338?text=Hello%20AAH%20Engineers!%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="fixed bottom-6 right-6 z-50 w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 group" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp text-white text-3xl"></i>
+        <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full animate-ping"></span>
+    </a>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    
+    <!-- AOS (Animate On Scroll) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Swiper JS (for sliders/carousels) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="scripts/script.js"></script>
+</body>
+</html>

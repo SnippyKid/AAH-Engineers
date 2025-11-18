@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAH Engineers - Home</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Minimalist Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="scripts/style.css">
+    
+    <!-- Tailwind Config - Light & Green Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0a0a0a',      // Deep Black
+                        accent: '#059669',       // Emerald Green
+                        light: '#f8fafc',        // Light Background
+                        gray: {
+                            mid: '#64748b',
+                            light: '#e2e8f0',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Playfair Display', 'serif'],
+                        body: ['DM Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-body bg-light text-primary antialiased overflow-x-hidden">
+    
+    <!-- Loader Overlay - Only on Index Page -->
+    <div class="loader-overlay" id="loaderOverlay">
+        <!-- Background Video -->
+        <video 
+            autoplay 
+            muted 
+            loop 
+            playsinline
+            class="loader-video-bg">
+            <source src="assets/videos/18069830-hd_1920_1080_24fps.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Loader Content -->
+        <div class="loader-content">
+            <!-- Animated Motor/Gear with UNIQUE classes -->
+            <div class="loader-motor-container">
+                <!-- Energy Rings -->
+                <div class="energy-rings">
+                    <div class="energy-ring energy-ring-1"></div>
+                    <div class="energy-ring energy-ring-2"></div>
+                    <div class="energy-ring energy-ring-3"></div>
+                </div>
+                
+                <!-- Main Gear -->
+                <div class="loader-gear loader-gear-main">
+                    <div class="loader-gear-inner">
+                        <div class="loader-gear-center"></div>
+                        <!-- Gear teeth -->
+                        <div class="loader-gear-tooth" style="transform: rotate(0deg)"></div>
+                        <div class="loader-gear-tooth" style="transform: rotate(45deg)"></div>
+                        <div class="loader-gear-tooth" style="transform: rotate(90deg)"></div>
+                        <div class="loader-gear-tooth" style="transform: rotate(135deg)"></div>
+                        <div class="loader-gear-tooth" style="transform: rotate(180deg)"></div>
+                        <div class="loader-gear-tooth" style="transform: rotate(225deg)"></div>
+                        <div class="loader-gear-tooth" style="transform: rotate(270deg)"></div>
+                        <div class="loader-gear-tooth" style="transform: rotate(315deg)"></div>
+                    </div>
+                </div>
+                
+                <!-- Small Gear -->
+                <div class="loader-gear loader-gear-small">
+                    <div class="loader-gear-inner-small">
+                        <div class="loader-gear-center-small"></div>
+                        <div class="loader-gear-tooth-small" style="transform: rotate(0deg)"></div>
+                        <div class="loader-gear-tooth-small" style="transform: rotate(60deg)"></div>
+                        <div class="loader-gear-tooth-small" style="transform: rotate(120deg)"></div>
+                        <div class="loader-gear-tooth-small" style="transform: rotate(180deg)"></div>
+                        <div class="loader-gear-tooth-small" style="transform: rotate(240deg)"></div>
+                        <div class="loader-gear-tooth-small" style="transform: rotate(300deg)"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Loader Text -->
+            <div class="loader-text">
+                <h2>AAH Engineers</h2>
+                <p>Precision Engineering</p>
+            </div>
+            
+            <!-- Interactive Button -->
+            <button class="loader-button" id="enterExperience">
+                <i class="fas fa-hand-pointer" style="margin-right: 0.5rem;"></i>
+                Click Here for Experience
+            </button>
+        </div>
+        
+        <!-- Progress Bar -->
+        <div class="loader-progress">
+            <div class="loader-progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+    
+    <!-- Full Screen Navigation Menu -->
+    <nav id="fullscreenMenu" class="fullscreen-menu">
+        <div class="menu-overlay">
+            <!-- Close Button -->
+            <button id="menuClose" class="menu-close" aria-label="Close Menu">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- Menu Content -->
+            <div class="menu-content">
+                <!-- Logo in Menu -->
+                <div class="menu-logo">
+                    <div class="flex items-center gap-3">
+                        <div class="flex gap-2">
+                            <div class="w-3 h-3 bg-accent rounded-full"></div>
+                            <div class="w-3 h-3 bg-white rounded-full"></div>
+                            <div class="w-3 h-3 bg-accent rounded-full"></div>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-2xl font-black text-white tracking-tight uppercase">AAH Engineers</h3>
+                            <p class="text-xs text-accent font-bold tracking-widest uppercase">Est. 1996</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <ul class="menu-links">
+                    <li class="menu-item">
+                        <a href="index.html" class="menu-link">
+                            <span class="menu-number">01</span>
+                            <span class="menu-text">Home</span>
+                            <i class="fas fa-arrow-right menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="aboutus.html" class="menu-link">
+                            <span class="menu-number">02</span>
+                            <span class="menu-text">About Us</span>
+                            <i class="fas fa-arrow-right menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="products.html" class="menu-link">
+                            <span class="menu-number">03</span>
+                            <span class="menu-text">Products</span>
+                            <i class="fas fa-arrow-right menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="services.html" class="menu-link">
+                            <span class="menu-number">04</span>
+                            <span class="menu-text">Services</span>
+                            <i class="fas fa-arrow-right menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="gallery.html" class="menu-link">
+                            <span class="menu-number">05</span>
+                            <span class="menu-text">Gallery</span>
+                            <i class="fas fa-arrow-right menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="contact.html" class="menu-link">
+                            <span class="menu-number">06</span>
+                            <span class="menu-text">Contact</span>
+                            <i class="fas fa-arrow-right menu-icon"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Contact Info -->
+                <div class="menu-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt text-accent"></i>
+                        <a href="tel:+912227690140" class="hover:text-accent transition">+91 22 27690140</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-mobile-alt text-accent"></i>
+                        <a href="tel:+919967522338" class="hover:text-accent transition">+91 9967522338</a>
+                        <span class="mx-1">/</span>
+                        <a href="tel:+919867974449" class="hover:text-accent transition">9867974449</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope text-accent"></i>
+                        <a href="mailto:info@aahengineers.com" class="hover:text-accent transition">info@aahengineers.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div>
+        <div>
+            
+            <!-- Hero Section - Full Screen with Video -->
+            <section id="hero" class="relative h-screen w-screen flex items-center justify-center overflow-hidden">
+                
+                <!-- Background Video - Minimal Visibility -->
+                <div class="absolute inset-0 z-0">
+                    <video 
+                        autoplay 
+                        muted 
+                        loop 
+                        playsinline
+                        class="absolute inset-0 w-full h-full object-cover opacity-30 blur-sm">
+                        <!-- Local video from assets folder -->
+                        <source src="assets/videos/18069830-hd_1920_1080_24fps.mp4" type="video/mp4">
+                        <!-- Fallback videos -->
+                        <source src="assets/videos/video.mp4" type="video/mp4">
+                    </video>
+                    <!-- Heavy overlay - video barely visible -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/98 via-light/97 to-white/96"></div>
+                </div>
+
+                <!-- Modern Logo - Top Left - Fixed on Scroll -->
+                <div class="fixed top-6 left-6 z-50" data-aos="fade-down" data-aos-duration="600">
+                    <div class="flex items-center gap-3 px-5 py-3 bg-white/95 backdrop-blur-md shadow-2xl border-l-4 border-accent">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-accent rounded-full"></div>
+                            <div class="w-2 h-2 bg-primary rounded-full"></div>
+                            <div class="w-2 h-2 bg-accent rounded-full"></div>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-lg font-black text-primary tracking-tight uppercase">AAH Engineers</h3>
+                            <p class="text-[10px] text-accent font-bold tracking-[0.3em] uppercase">Est. 1996</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Button - Top Right - Fixed on Scroll -->
+                <button id="menuToggle" class="fixed top-6 right-6 z-50 p-4 bg-white/95 backdrop-blur-md shadow-2xl border-2 border-gray-light hover:border-accent transition-all duration-150 group" data-aos="fade-down" data-aos-duration="600" aria-label="Toggle Menu">
+                    <div class="w-6 h-5 flex flex-col justify-between">
+                        <span class="w-full h-0.5 bg-primary group-hover:bg-accent transition-all duration-150 origin-left"></span>
+                        <span class="w-full h-0.5 bg-primary group-hover:bg-accent transition-all duration-150"></span>
+                        <span class="w-full h-0.5 bg-primary group-hover:bg-accent transition-all duration-150 origin-left"></span>
+                    </div>
+                </button>
+
+                <!-- Interactive Motor Element -->
+                <div id="interactive-motor" class="absolute pointer-events-none transition-all duration-300 ease-out">
+                    <div class="motor-container">
+                        <!-- Main Gear -->
+                        <div class="gear gear-main">
+                            <div class="gear-inner">
+                                <div class="gear-center"></div>
+                                <!-- Gear teeth -->
+                                <div class="gear-tooth" style="transform: rotate(0deg)"></div>
+                                <div class="gear-tooth" style="transform: rotate(45deg)"></div>
+                                <div class="gear-tooth" style="transform: rotate(90deg)"></div>
+                                <div class="gear-tooth" style="transform: rotate(135deg)"></div>
+                                <div class="gear-tooth" style="transform: rotate(180deg)"></div>
+                                <div class="gear-tooth" style="transform: rotate(225deg)"></div>
+                                <div class="gear-tooth" style="transform: rotate(270deg)"></div>
+                                <div class="gear-tooth" style="transform: rotate(315deg)"></div>
+                            </div>
+                        </div>
+                        <!-- Small Gear -->
+                        <div class="gear gear-small">
+                            <div class="gear-inner-small">
+                                <div class="gear-center-small"></div>
+                                <div class="gear-tooth-small" style="transform: rotate(0deg)"></div>
+                                <div class="gear-tooth-small" style="transform: rotate(60deg)"></div>
+                                <div class="gear-tooth-small" style="transform: rotate(120deg)"></div>
+                                <div class="gear-tooth-small" style="transform: rotate(180deg)"></div>
+                                <div class="gear-tooth-small" style="transform: rotate(240deg)"></div>
+                                <div class="gear-tooth-small" style="transform: rotate(300deg)"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decorative Accent Elements -->
+                <div class="absolute top-20 right-10 w-2 h-32 bg-accent/20"></div>
+                <div class="absolute bottom-20 left-10 w-32 h-2 bg-accent/20"></div>
+
+                <!-- Content -->
+                <div class="relative z-10 container mx-auto px-6 lg:px-12">
+                    <div class="max-w-5xl mx-auto text-center">
+                        
+                        <!-- Badge - Clearly Visible -->
+                        <div class="mb-10" data-aos="fade-down" data-aos-duration="600">
+                            <div class="inline-block px-6 py-3 bg-primary text-white shadow-2xl">
+                                <div class="flex items-center gap-3">
+                                    <div class="flex gap-1">
+                                        <div class="w-1 h-6 bg-accent"></div>
+                                        <div class="w-1 h-6 bg-white"></div>
+                                        <div class="w-1 h-6 bg-accent"></div>
+                                    </div>
+                                    <span class="text-sm md:text-base font-bold tracking-wider uppercase">
+                                        Manufacturing Excellence Since 1996
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Main Heading - Bold & Clear -->
+                        <div class="mb-8" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
+                            <h1 class="font-display text-6xl md:text-7xl lg:text-8xl font-bold text-primary mb-2 leading-tight">
+                                Precision Engineered
+                            </h1>
+                            <h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-accent">
+                                GearBox Solutions
+                            </h2>
+                        </div>
+
+                        <!-- Subtitle - Clean & Simple -->
+                        <div class="max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+                            <p class="text-lg md:text-xl text-gray-mid leading-relaxed">
+                                Worm, Helical, Bevel & Planetary Gearboxes | Up to <span class="font-bold text-accent">3000 KW</span> Capacity
+                            </p>
+                        </div>
+
+                        <!-- CTA Buttons - Transparent with Cool Hover -->
+                        <div class="flex flex-col sm:flex-row gap-5 justify-center items-center" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+                            <a href="products.html" class="group relative px-10 py-4 border-2 border-primary bg-transparent text-primary font-bold tracking-wide overflow-hidden transition-all duration-500 hover:border-accent hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/20">
+                                <span class="relative z-10 flex items-center gap-3 transition-colors duration-300 group-hover:text-white">
+                                    View Products
+                                    <i class="fas fa-arrow-right text-sm transition-transform duration-300 group-hover:translate-x-2"></i>
+                                </span>
+                                <div class="absolute inset-0 bg-accent scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"></div>
+                            </a>
+                            
+                            <a href="contact.html" class="group relative px-10 py-4 border-2 border-accent bg-transparent text-accent font-bold tracking-wide overflow-hidden transition-all duration-500 hover:border-accent hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/20">
+                                <span class="relative z-10 flex items-center gap-3 transition-colors duration-300 group-hover:text-white">
+                                    Get in Touch
+                                    <i class="fas fa-phone text-sm"></i>
+                                </span>
+                                <div class="absolute inset-0 bg-accent scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"></div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </section>
+            <!-- End Hero Section -->
+
+            <!-- Our Capabilities & Reviews Section -->
+            <section class="relative py-20 lg:py-32 bg-white overflow-hidden">
+                
+                <!-- Decorative Background Elements -->
+                <div class="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+                
+                <div class="container mx-auto px-6 lg:px-12 relative z-10">
+                    
+                    <!-- Section Header -->
+                    <div class="text-center mb-16" data-aos="fade-up">
+                        <div class="inline-flex items-center gap-3 px-6 py-2 bg-accent/10 border-l-4 border-accent mb-6">
+                            <div class="flex gap-1">
+                                <div class="w-2 h-2 bg-accent rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                            </div>
+                            <span class="text-sm font-bold text-accent tracking-wider uppercase">What We Do Best</span>
+                        </div>
+                        <h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-4">
+                            Our Capabilities
+                        </h2>
+                        <p class="text-lg md:text-xl text-gray-mid max-w-3xl mx-auto">
+                            Decades of engineering excellence delivering precision solutions
+                        </p>
+                    </div>
+
+                    <!-- Capabilities Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+                        
+                        <!-- Capability 1 -->
+                        <div class="group relative bg-light p-8 border-2 border-gray-light hover:border-accent transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="100">
+                            <div class="absolute top-0 left-0 w-1 h-0 bg-accent group-hover:h-full transition-all duration-500"></div>
+                            <div class="text-accent text-4xl mb-4">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-primary mb-3">Custom Design</h3>
+                            <p class="text-gray-mid leading-relaxed">
+                                Tailored gearbox solutions engineered to your exact specifications and requirements.
+                            </p>
+                        </div>
+
+                        <!-- Capability 2 -->
+                        <div class="group relative bg-light p-8 border-2 border-gray-light hover:border-accent transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="200">
+                            <div class="absolute top-0 left-0 w-1 h-0 bg-accent group-hover:h-full transition-all duration-500"></div>
+                            <div class="text-accent text-4xl mb-4">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-primary mb-3">Heavy Capacity</h3>
+                            <p class="text-gray-mid leading-relaxed">
+                                Industrial-grade gearboxes with power ratings up to 3000 KW for demanding applications.
+                            </p>
+                        </div>
+
+                        <!-- Capability 3 -->
+                        <div class="group relative bg-light p-8 border-2 border-gray-light hover:border-accent transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="300">
+                            <div class="absolute top-0 left-0 w-1 h-0 bg-accent group-hover:h-full transition-all duration-500"></div>
+                            <div class="text-accent text-4xl mb-4">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-primary mb-3">Quality Assured</h3>
+                            <p class="text-gray-mid leading-relaxed">
+                                Rigorous testing and quality control ensuring reliable performance and durability.
+                            </p>
+                        </div>
+
+                        <!-- Capability 4 -->
+                        <div class="group relative bg-light p-8 border-2 border-gray-light hover:border-accent transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="400">
+                            <div class="absolute top-0 left-0 w-1 h-0 bg-accent group-hover:h-full transition-all duration-500"></div>
+                            <div class="text-accent text-4xl mb-4">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-primary mb-3">Expert Support</h3>
+                            <p class="text-gray-mid leading-relaxed">
+                                Comprehensive technical support and maintenance services throughout product lifecycle.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- Featured Products Gallery -->
+                    <div class="my-24" data-aos="fade-up">
+                        <div class="text-center mb-12">
+                            <div class="inline-flex items-center gap-3 px-6 py-2 bg-primary text-white mb-6">
+                                <i class="fas fa-th-large text-accent"></i>
+                                <span class="text-sm font-bold tracking-wider uppercase">Our Products</span>
+                            </div>
+                            <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4">
+                                Featured Gearboxes
+                            </h2>
+                            <p class="text-lg md:text-xl text-gray-mid max-w-2xl mx-auto">
+                                Precision-engineered solutions for every industrial need
+                            </p>
+                        </div>
+
+                        <!-- Products Grid -->
+                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                            
+                            <!-- Product 1 -->
+                            <div class="group relative overflow-hidden bg-white border-2 border-gray-light hover:border-accent transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl" data-aos="zoom-in" data-aos-delay="100">
+                                <div class="aspect-square overflow-hidden">
+                                    <img src="assets/images/1_s.jpg" alt="Gearbox Product" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                                    <div class="text-white">
+                                        <h4 class="font-display text-lg font-bold mb-1">Worm Gearbox</h4>
+                                        <p class="text-sm text-gray-light">High Efficiency</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product 2 -->
+                            <div class="group relative overflow-hidden bg-white border-2 border-gray-light hover:border-accent transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl" data-aos="zoom-in" data-aos-delay="150">
+                                <div class="aspect-square overflow-hidden">
+                                    <img src="assets/images/3_s.jpg" alt="Gearbox Product" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                                    <div class="text-white">
+                                        <h4 class="font-display text-lg font-bold mb-1">Helical Gearbox</h4>
+                                        <p class="text-sm text-gray-light">Heavy Duty</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product 3 -->
+                            <div class="group relative overflow-hidden bg-white border-2 border-gray-light hover:border-accent transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl" data-aos="zoom-in" data-aos-delay="200">
+                                <div class="aspect-square overflow-hidden">
+                                    <img src="assets/images/5_s.jpg" alt="Gearbox Product" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                                    <div class="text-white">
+                                        <h4 class="font-display text-lg font-bold mb-1">Bevel Gearbox</h4>
+                                        <p class="text-sm text-gray-light">Precision Engineered</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product 4 -->
+                            <div class="group relative overflow-hidden bg-white border-2 border-gray-light hover:border-accent transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl" data-aos="zoom-in" data-aos-delay="250">
+                                <div class="aspect-square overflow-hidden">
+                                    <img src="assets/images/7_s.jpg" alt="Gearbox Product" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                                    <div class="text-white">
+                                        <h4 class="font-display text-lg font-bold mb-1">Planetary Gearbox</h4>
+                                        <p class="text-sm text-gray-light">Compact Design</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product 5 -->
+                            <div class="group relative overflow-hidden bg-white border-2 border-gray-light hover:border-accent transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl" data-aos="zoom-in" data-aos-delay="300">
+                                <div class="aspect-square overflow-hidden">
+                                    <img src="assets/images/10_s.jpg" alt="Gearbox Product" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                                    <div class="text-white">
+                                        <h4 class="font-display text-lg font-bold mb-1">Industrial Gearbox</h4>
+                                        <p class="text-sm text-gray-light">3000 KW Capacity</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product 6 -->
+                            <div class="group relative overflow-hidden bg-white border-2 border-gray-light hover:border-accent transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl" data-aos="zoom-in" data-aos-delay="350">
+                                <div class="aspect-square overflow-hidden">
+                                    <img src="assets/images/12_s.jpg" alt="Gearbox Product" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                                    <div class="text-white">
+                                        <h4 class="font-display text-lg font-bold mb-1">Custom Gearbox</h4>
+                                        <p class="text-sm text-gray-light">Made to Order</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product 7 -->
+                            <div class="group relative overflow-hidden bg-white border-2 border-gray-light hover:border-accent transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl" data-aos="zoom-in" data-aos-delay="400">
+                                <div class="aspect-square overflow-hidden">
+                                    <img src="assets/images/15_s.jpg" alt="Gearbox Product" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                                    <div class="text-white">
+                                        <h4 class="font-display text-lg font-bold mb-1">Specialty Gearbox</h4>
+                                        <p class="text-sm text-gray-light">Premium Quality</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product 8 -->
+                            <div class="group relative overflow-hidden bg-white border-2 border-gray-light hover:border-accent transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl" data-aos="zoom-in" data-aos-delay="450">
+                                <div class="aspect-square overflow-hidden">
+                                    <img src="assets/images/17_s.jpg" alt="Gearbox Product" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                                    <div class="text-white">
+                                        <h4 class="font-display text-lg font-bold mb-1">Advanced Gearbox</h4>
+                                        <p class="text-sm text-gray-light">Latest Technology</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- View All Button -->
+                        <div class="text-center mt-12">
+                            <a href="products.html" class="group relative inline-block px-12 py-4 border-2 border-primary bg-transparent text-primary font-bold tracking-wide overflow-hidden transition-all duration-500 hover:border-accent hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/20">
+                                <span class="relative z-10 flex items-center gap-3 transition-colors duration-300 group-hover:text-white">
+                                    View All Products
+                                    <i class="fas fa-arrow-right text-sm transition-transform duration-300 group-hover:translate-x-2"></i>
+                                </span>
+                                <div class="absolute inset-0 bg-accent scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"></div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Reviews Slider Section -->
+                    <div class="mt-20" data-aos="fade-up">
+                        <div class="text-center mb-12">
+                            <div class="inline-flex items-center gap-3 px-6 py-2 bg-primary text-white mb-6">
+                                <i class="fas fa-quote-left text-accent"></i>
+                                <span class="text-sm font-bold tracking-wider uppercase">Client Testimonials</span>
+                            </div>
+                            <h2 class="font-display text-4xl md:text-5xl font-bold text-primary">
+                                What Our Clients Say
+                            </h2>
+                        </div>
+
+                        <!-- Swiper Reviews Slider -->
+                        <div class="swiper reviewsSwiper relative">
+                            <div class="swiper-wrapper pb-16">
+                                
+                                <!-- Review 1 -->
+                                <div class="swiper-slide">
+                                    <div class="bg-gradient-to-br from-white to-light p-10 border-2 border-gray-light shadow-xl h-full">
+                                        <div class="flex items-center gap-4 mb-6">
+                                            <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center">
+                                                <i class="fas fa-user text-2xl text-accent"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-display text-xl font-bold text-primary">Rajesh Kumar</h4>
+                                                <p class="text-sm text-gray-mid">Manufacturing Director</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-accent text-3xl mb-4">
+                                            <i class="fas fa-quote-left"></i>
+                                        </div>
+                                        <p class="text-gray-mid text-lg leading-relaxed mb-6">
+                                            "AAH Engineers delivered custom gearboxes that exceeded our expectations. Their attention to detail and engineering expertise is unmatched in the industry."
+                                        </p>
+                                        <div class="flex gap-1 text-accent text-xl">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Review 2 -->
+                                <div class="swiper-slide">
+                                    <div class="bg-gradient-to-br from-white to-light p-10 border-2 border-gray-light shadow-xl h-full">
+                                        <div class="flex items-center gap-4 mb-6">
+                                            <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center">
+                                                <i class="fas fa-user text-2xl text-accent"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-display text-xl font-bold text-primary">Priya Sharma</h4>
+                                                <p class="text-sm text-gray-mid">Operations Manager</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-accent text-3xl mb-4">
+                                            <i class="fas fa-quote-left"></i>
+                                        </div>
+                                        <p class="text-gray-mid text-lg leading-relaxed mb-6">
+                                            "Outstanding quality and reliability. We've been using their gearboxes for 5 years with zero downtime. Highly recommend for heavy industrial applications."
+                                        </p>
+                                        <div class="flex gap-1 text-accent text-xl">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Review 3 -->
+                                <div class="swiper-slide">
+                                    <div class="bg-gradient-to-br from-white to-light p-10 border-2 border-gray-light shadow-xl h-full">
+                                        <div class="flex items-center gap-4 mb-6">
+                                            <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center">
+                                                <i class="fas fa-user text-2xl text-accent"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-display text-xl font-bold text-primary">Amit Patel</h4>
+                                                <p class="text-sm text-gray-mid">Chief Engineer</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-accent text-3xl mb-4">
+                                            <i class="fas fa-quote-left"></i>
+                                        </div>
+                                        <p class="text-gray-mid text-lg leading-relaxed mb-6">
+                                            "Professional team, precision engineering, and excellent after-sales support. AAH Engineers is our go-to partner for all gearbox requirements."
+                                        </p>
+                                        <div class="flex gap-1 text-accent text-xl">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Review 4 -->
+                                <div class="swiper-slide">
+                                    <div class="bg-gradient-to-br from-white to-light p-10 border-2 border-gray-light shadow-xl h-full">
+                                        <div class="flex items-center gap-4 mb-6">
+                                            <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center">
+                                                <i class="fas fa-user text-2xl text-accent"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-display text-xl font-bold text-primary">Sanjay Verma</h4>
+                                                <p class="text-sm text-gray-mid">Production Head</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-accent text-3xl mb-4">
+                                            <i class="fas fa-quote-left"></i>
+                                        </div>
+                                        <p class="text-gray-mid text-lg leading-relaxed mb-6">
+                                            "The build quality and performance of their planetary gearboxes is exceptional. Worth every penny. A trusted name since 1996!"
+                                        </p>
+                                        <div class="flex gap-1 text-accent text-xl">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+                            <!-- Navigation Arrows -->
+                            <div class="swiper-button-next text-accent"></div>
+                            <div class="swiper-button-prev text-accent"></div>
+                            
+                            <!-- Pagination -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+            <!-- End Capabilities & Reviews Section -->
+
+            <!-- Innovation & Sustainability Section -->
+            <section class="relative py-24 lg:py-32 bg-primary text-white overflow-hidden">
+                
+                <!-- Gradient Overlays -->
+                <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary to-accent/40 opacity-80"></div>
+                <div class="absolute -top-40 -right-24 w-80 h-80 rounded-full bg-white/10 blur-3xl"></div>
+                <div class="absolute -bottom-48 -left-28 w-96 h-96 rounded-full bg-accent/20 blur-3xl"></div>
+                
+                <div class="relative z-10 container mx-auto px-6 lg:px-12">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                        
+                        <!-- Left Column -->
+                        <div class="space-y-8" data-aos="fade-right">
+                            <div class="inline-flex items-center gap-3 px-6 py-2 bg-white/10 border border-white/20 uppercase tracking-[0.3em] text-xs md:text-sm font-semibold">
+                                <span class="w-2 h-2 rounded-full bg-accent"></span>
+                                Future-Ready Engineering
+                            </div>
+                            
+                            <div>
+                                <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                                    Innovating Today for <span class="text-accent">Tomorrow's Power</span>
+                                </h2>
+                                <p class="text-white/80 text-lg leading-relaxed">
+                                    From advanced materials research to intelligent monitoring, AAH Engineers constantly evolves to deliver next-generation transmission solutions. Discover how our in-house innovation lab is shaping the future of motion.
+                                </p>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-6">
+                                <div class="bg-white/10 border border-white/10 backdrop-blur-lg p-6 rounded-2xl" data-aos="zoom-in" data-aos-delay="150">
+                                    <p class="text-4xl font-display font-bold text-accent mb-2">40%</p>
+                                    <p class="text-white/70 text-sm uppercase tracking-widest">Efficiency Boost</p>
+                                    <p class="text-white/60 text-sm mt-3 leading-relaxed">Achieved via thermal optimization and smart lubrication systems.</p>
+                                </div>
+                                <div class="bg-white/10 border border-white/10 backdrop-blur-lg p-6 rounded-2xl" data-aos="zoom-in" data-aos-delay="200">
+                                    <p class="text-4xl font-display font-bold text-accent mb-2">24/7</p>
+                                    <p class="text-white/70 text-sm uppercase tracking-widest">Predictive Insights</p>
+                                    <p class="text-white/60 text-sm mt-3 leading-relaxed">Remote diagnostics powered by AI-driven vibration analytics.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-4">
+                                <div class="px-5 py-3 rounded-full bg-white/10 border border-white/10 text-white/80 text-sm uppercase tracking-wide flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-accent rounded-full"></span>
+                                    Digital Twin Simulations
+                                </div>
+                                <div class="px-5 py-3 rounded-full bg-white/10 border border-white/10 text-white/80 text-sm uppercase tracking-wide flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-accent rounded-full"></span>
+                                    Circular Manufacturing
+                                </div>
+                                <div class="px-5 py-3 rounded-full bg-white/10 border border-white/10 text-white/80 text-sm uppercase tracking-wide flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-accent rounded-full"></span>
+                                    Smart IoT Retrofits
+                                </div>
+                            </div>
+                            
+                            <a href="services.html" class="inline-flex items-center gap-3 px-8 py-4 bg-accent text-primary font-bold uppercase tracking-widest hover:bg-white transition-all duration-300">
+                                Explore Innovation Lab
+                                <i class="fas fa-arrow-right text-sm"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Right Column -->
+                        <div class="space-y-8" data-aos="fade-left">
+                            
+                            <!-- Timeline Card -->
+                            <div class="bg-white/10 border border-white/10 backdrop-blur-xl rounded-3xl p-8 space-y-8">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-14 h-14 rounded-full bg-accent/20 flex items-center justify-center">
+                                        <i class="fas fa-flask text-accent text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-display text-2xl font-semibold">Innovation Timeline</h3>
+                                        <p class="text-white/60 text-sm uppercase tracking-widest">Milestones at a glance</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="space-y-6">
+                                    <div class="flex gap-4">
+                                        <div class="flex flex-col items-center">
+                                            <span class="text-accent font-semibold text-sm tracking-widest">2021</span>
+                                            <span class="w-1 h-full bg-accent/40 mt-2"></span>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-lg font-semibold mb-1">Hybrid Gearbox R&D Center</h4>
+                                            <p class="text-white/60 text-sm leading-relaxed">Established dedicated research cell for lightweight alloy gear systems.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex gap-4">
+                                        <div class="flex flex-col items-center">
+                                            <span class="text-accent font-semibold text-sm tracking-widest">2022</span>
+                                            <span class="w-1 h-full bg-accent/40 mt-2"></span>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-lg font-semibold mb-1">IoT Monitoring Suite</h4>
+                                            <p class="text-white/60 text-sm leading-relaxed">Launched predictive maintenance dashboards for mission-critical drives.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex gap-4">
+                                        <div class="flex flex-col items-center">
+                                            <span class="text-accent font-semibold text-sm tracking-widest">2024</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-lg font-semibold mb-1">Zero-Waste Manufacturing</h4>
+                                            <p class="text-white/60 text-sm leading-relaxed">Achieved 92% recycling across forging and machining operations.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Partner Grid -->
+                            <div class="bg-white/5 border border-white/10 rounded-3xl p-8">
+                                <p class="text-white/50 uppercase tracking-[0.55em] text-xs mb-6">Trusted Collaboration Network</p>
+                                <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 text-white/70 text-sm">
+                                    <div class="flex items-center gap-3 border border-white/5 rounded-xl px-4 py-3 hover:border-accent/60 transition">
+                                        <span class="text-xl">🔋</span>
+                                        Renewable OEMs
+                                    </div>
+                                    <div class="flex items-center gap-3 border border-white/5 rounded-xl px-4 py-3 hover:border-accent/60 transition">
+                                        <span class="text-xl">🚄</span>
+                                        Rail Integrators
+                                    </div>
+                                    <div class="flex items-center gap-3 border border-white/5 rounded-xl px-4 py-3 hover:border-accent/60 transition">
+                                        <span class="text-xl">🏭</span>
+                                        Process Plants
+                                    </div>
+                                    <div class="flex items-center gap-3 border border-white/5 rounded-xl px-4 py-3 hover:border-accent/60 transition">
+                                        <span class="text-xl">🛰️</span>
+                                        Aerospace Suppliers
+                                    </div>
+                                    <div class="flex items-center gap-3 border border-white/5 rounded-xl px-4 py-3 hover:border-accent/60 transition">
+                                        <span class="text-xl">⚙️</span>
+                                        Heavy Engineering
+                                    </div>
+                                    <div class="flex items-center gap-3 border border-white/5 rounded-xl px-4 py-3 hover:border-accent/60 transition">
+                                        <span class="text-xl">🌐</span>
+                                        Global EPC Firms
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            <!-- End Innovation & Sustainability Section -->
+
+            <!-- Footer -->
+            <footer class="bg-primary text-white pt-20 pb-10 relative overflow-hidden">
+                <!-- Ambient glow -->
+                <div class="absolute inset-0 bg-gradient-to-tr from-accent/10 via-transparent to-white/5 pointer-events-none"></div>
+                <div class="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-accent/20 blur-3xl opacity-70"></div>
+                <div class="absolute -top-16 right-0 w-64 h-64 rounded-full bg-white/10 blur-3xl opacity-50"></div>
+
+                <div class="relative z-10 container mx-auto px-6 lg:px-12">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-white/10 pb-10">
+                        <div>
+                            <h3 class="font-display text-2xl font-semibold mb-4">AAH Engineers</h3>
+                            <p class="text-white/60 leading-relaxed">
+                                Precision gearbox solutions engineered for heavy-duty performance, backed by decades of manufacturing excellence and innovation.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-sm uppercase tracking-[0.35em] text-white/60 mb-4">Quick Links</h4>
+                            <ul class="space-y-3 text-white/70">
+                                <li><a href="aboutus.html" class="hover:text-accent transition">About Us</a></li>
+                                <li><a href="products.html" class="hover:text-accent transition">Products</a></li>
+                                <li><a href="services.html" class="hover:text-accent transition">Services</a></li>
+                                <li><a href="contact.html" class="hover:text-accent transition">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-sm uppercase tracking-[0.35em] text-white/60 mb-4">Contact Us</h4>
+                            <div class="space-y-3 text-white/70 text-sm">
+                                <p class="flex items-start gap-3">
+                                    <i class="fas fa-map-marker-alt text-accent mt-1"></i>
+                                    <span>Plot No R544, TTC Industrial Area, Near Golden Garage, Rabale, Navi Mumbai 400701</span>
+                                </p>
+                                <p class="flex items-center gap-3">
+                                    <i class="fas fa-phone-alt text-accent"></i>
+                                    <a href="tel:+912227690140" class="hover:text-accent transition">+91 22 27690140</a>
+                                </p>
+                                <p class="flex items-center gap-3">
+                                    <i class="fas fa-mobile-alt text-accent"></i>
+                                    <a href="tel:+919967522338" class="hover:text-accent transition">+91 9967522338</a>
+                                    <span class="mx-1">/</span>
+                                    <a href="tel:+919867974449" class="hover:text-accent transition">9867974449</a>
+                                </p>
+                                <p class="flex items-center gap-3">
+                                    <i class="fas fa-envelope text-accent"></i>
+                                    <a href="mailto:info@aahengineers.com" class="hover:text-accent transition">info@aahengineers.com</a>
+                                </p>
+                            </div>
+                            <div class="flex gap-4 mt-6">
+                                <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-accent hover:text-accent transition">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-accent hover:text-accent transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-accent hover:text-accent transition">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative z-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-white/60 text-sm tracking-wider">
+                        <p>© <span id="currentYear"></span> AAH Engineers. All rights reserved.</p>
+                        <p class="uppercase tracking-[0.4em] text-white/50">copyright made by abhay hanchate</p>
+                    </div>
+                </div>
+            </footer>
+            <!-- End Footer -->
+
+        </div>
+    </div>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    
+    <!-- AOS (Animate On Scroll) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Swiper JS (for sliders/carousels) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    
+    <!-- Custom JS -->
+    <script src="scripts/script.js"></script>
+</body>
+</html>
+
